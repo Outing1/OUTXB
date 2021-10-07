@@ -146,19 +146,12 @@
 			document.getElementById('date2').innerHTML = y+"-"+m+"-"+d;
 		</script>
         <script>
-            var qrcode = new QRCode(document.getElementsByClassName("qrContainer green")[0], {
+            var qrcode = new QRCode("test", {
+			text : "SXQJ43cc96c80ca44de694ea4dd9b11d9cbe1633256956792"
             width : 256,
             height : 256,
-            colorDark: "#179702"
+            colorDark: "#179702"	
         });
-                var ajaxObj = new XMLHttpRequest();
-                ajaxObj.open('get', 'http://noleave.sxu.edu.cn/jcforms/plus/api/getRandom');
-                ajaxObj.send()
-                ajaxObj.onreadystatechange = function () {
-                    if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
-                        qrcode.makeCode(JSON.parse(ajaxObj.responseText)['msg']);
-                    }
-                }
         </script>
 	</body>
 </html>
